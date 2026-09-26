@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voting Eligibility</title>
+</head>
+<body>
+
+    <h2>Voting Eligibility Checker</h2>
+
+    <label>Enter your birth year:</label>
+    <input type="number" id="birthYear">
+
+    <button onclick="checkVoting()">Check</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkVoting() {
+            let num = parseInt(document.getElementById("birthYear").value);
+            let Age = 2026 - num;
+
+            if (Age == 17) {
+                document.getElementById("result").innerHTML =
+                    "One year left for voting eligibility";
+            }
+            else if (Age >= 18) {
+                document.getElementById("result").innerHTML =
+                    "Eligible for voting";
+            }
+            else {
+                document.getElementById("result").innerHTML =
+                    (18 - Age) + " Years left for voting";
+            }
+        }
+    </script>
+
+</body>
+</html>
